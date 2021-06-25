@@ -1,0 +1,81 @@
+<nav class="navbar navbar-light bg-primary">
+  <div class="container-fluid">
+      <h1 style="color:white">CASE 1 ANGULAR/INTERN</h1>
+      <div class="d-flex">
+        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Add Employee
+          </button>
+      </div>
+      </div>
+</nav>
+
+<table class="table table-bordered border-primary " >
+    <thead>
+      <tr>
+       
+        <th scope="col">Id</th>
+        <th scope="col">Title</th>
+        <th scope="col">Body</th>
+        <th scope="col">Action </th>
+        
+    </tr>
+</thead>
+<tbody *ngFor="let res of resData">
+    <tr class="table-primary" >
+        <td>{{res.userId}}</td>
+        <td>{{res.id}}</td>
+        <td>{{res.title}}</td>
+        <td>{{res.body}}</td>
+        
+      
+        <td>
+                <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="updateEmployeeData(res)">Edit</button>
+                <button class="btn btn-danger " (click)="deleteEmployeeData(res)">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<!-- Button trigger modal -->
+<!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Launch demo modal
+  </button> -->
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Employee Details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form [formGroup]="myForm">
+               
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Id</label>
+                  <input type="number" class="form-control" id="exampleInputPassword1"formControlName="Id">
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">User Id</label>
+                  <input type="number" class="form-control" id="exampleInputPassword1"formControlName="UserId">
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Title</label>
+                  <input type="text" class="form-control" id="exampleInputPassword1"formControlName="Title">
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Body</label>
+                  <input type="Text" class="form-control" id="exampleInputPassword1"formControlName="Body">
+                </div>
+               
+              </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="cancel" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" (click)="postEmployeeDetails()">Add Employee</button>
+          <button type="button" class="btn btn-secondary" (click)="updateData()">Update</button>
+        </div>
+      </div>
+    </div>  
+  </div>

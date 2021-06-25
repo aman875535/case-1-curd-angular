@@ -1,0 +1,72 @@
+<nav class="navbar navbar-light bg-primary">
+    <div class="container-fluid">
+        <h1 style="color:white">CASE 1 ANGULAR/INTERN</h1>
+        <div class="d-flex">
+         
+        </div>
+        </div>
+  </nav>
+
+
+<table class="table table-bordered border-primary " >
+    <thead>
+   <tr>
+  <th scope="col">Id</th>
+  <th scope="col">UserId</th>
+  <th scope="col">Title</th>
+  <th scope="col">Body</th>
+  
+  
+</tr>
+</thead>
+<tbody>
+<tr class="table-primary">
+  <td>{{resData.id}}</td>
+  <td>{{resData.userId}}</td>
+  <td>{{resData.title}}</td>
+  <td>{{resData.body}}</td>
+ 
+ 
+  
+
+  </tr>
+</tbody>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+</table>
+<h2>Comments</h2>
+<table class="table table-bordered border-primary "  >
+  <thead>
+ <tr>
+<th scope="col">Id</th>
+<th scope="col">postId</th>
+<th scope="col">Name</th>
+<th scope="col">Email</th>
+<th scope="col">body</th>
+
+
+</tr>
+</thead>
+<tbody *ngFor="let cc of comment">
+<tr class="table-primary">
+<td>{{cc.id}}</td>
+<td>{{cc.postId}}</td>
+<td>{{cc.name}}</td>
+<td>{{cc.email}}</td>
+<td>{{cc.body}}</td>
+
+
+
+
+</tr>
+</tbody>
+
+
+
+</table>
